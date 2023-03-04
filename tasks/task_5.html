@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Task_5</title>
+</head>
+<body>
+    <h4>
+        <a href="../index.html">Назад</a>
+    </h4>  
+    <h3>Задача_5</h3>
+    <h5>Вивести таблицю</h5>
+    <img src="./images/5.1.png" alt="">
+    <script>
+        const column = 3,
+              line = 3
+        let counter = 1
+        document.write(`<table>
+                            <tbody>`)                        
+        for (let countLine = 1; countLine <= line; countLine++) {
+            document.write(`<tr>`)
+                for (let countColumn = 1; countColumn <= column; countColumn++) {
+                    document.write(`<td> ${counter}</td>`)
+                    counter++           
+        }   document.write(`</tr>`)   
+    }       
+        document.write(`    </tbody>
+                        </table>`)
+        
+    </script>
+    
+</body>
+</html>

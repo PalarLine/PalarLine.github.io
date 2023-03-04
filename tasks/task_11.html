@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 11</title>
+</head>
+
+<body>
+    <h4>
+        <a href="../index.html">Назад</a>
+    </h4>  
+    <h1>Задача 11.</h1>
+    <h3>Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.
+    </h3>
+    <script> 
+        let startNumber = parseInt(prompt('Enter the beginning number of interval:',''))
+        let endNumber = parseInt(prompt('Enter the  ending number of interval:',''))
+        let oddSum = 0 
+        let oddCounter = 0
+
+        if (startNumber > endNumber) {
+            let temp = startNumber
+            startNumber = endNumber
+            endNumber = temp
+        }   
+        startNumber = startNumber + (1 - startNumber % 2)
+
+        for (i = startNumber; i <= endNumber && oddCounter < 5; i += 2) {
+            oddSum += i
+            oddCounter ++          
+        }
+        document.write(`${oddSum}`)
+        </script>
+</body>
+
+</html>

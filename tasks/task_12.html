@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Task 12</title>
+</head>
+
+<body>
+    <h4>
+        <a href="../index.html">Назад</a>
+    </h4>  
+    <h1>Задача 12.</h1>
+    <h3>Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з чотирьох зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору зображення за номером)
+    </h3>
+    <div>
+    <img src="./images/12.1.png" alt="">
+    </div>  
+    
+    <script>
+        let counter1= 0, counter2 = 0, counter3 = 0, counter4 = 0
+        for (let i = 1; i <= 3; i++) {
+            let result = (Math.floor(Math.random() * 4 + 1))
+            document.write(`<div class="flex">`)
+           
+            switch (result) {
+                case 1: counter1++
+                    
+                    break;
+                case 2: counter2++
+                    
+                    break;
+                case 3: counter3++
+                    
+                    break;
+                case 4: counter4++
+                    
+                    break;
+            
+                default: error
+                    break;
+
+            }
+            document.write(`<div class="imgContainer">
+                                <img src="./images/img${result}.png" alt="image">
+                            </div>`)
+        }
+        document.write(`</div>`)
+        switch (3) {
+            case counter1: document.write('You are winner! Your prize is 100 $')
+                
+                break;
+            case counter2: document.write('You are winner! Your prize is 200 $')
+                
+                break;
+
+            case counter3: document.write('You are winner! Your prize is 500 $')
+                
+                break;
+            case counter4: document.write('You are winner! Your prize is 1000 $')
+                
+                break;
+            
+        
+            default: document.write('You loose')
+                break;
+        }
+
+    </script>     
+    
+</body>
+
+</html>
