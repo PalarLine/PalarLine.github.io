@@ -4,28 +4,51 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Task_3</title>
+    <title>Task 3</title>
 </head>
 <body>
     <h4>
         <a href="../index.html">Назад</a>
-    </h4>    
-    <h3>Задача_3</h3>
-    <h5> Вивести таблицю з одним рядком і  7 стовпцями</h5>
-    <img src="./images/3.1.png" alt="">
+    </h4> 
+    <h1>Задача 3</h1>
+    <h4>Створити окремі функції, які для 4 чисел знаходять:
+        1)суму;
+        2)добуток;
+        3)середнє арифметичне;
+        4)мінімальне значення. 
+    </h4>
     <script>
-        const column = 7
-        document.write(`<table>
-                            <tbody>
-                                <tr>`)
-        for (let columnNum = 1; columnNum <= 7; columnNum++) {
-            document.write(`<td> ${columnNum}</td>`)
+        function getSum(a, b, c, d) {
+            let sumFours = a + b + c + d
+            return sumFours            
         }
-        document.write(`        </tr>
-                            </tbody>
-                        </table>`)
-    
+        function getMultiplication(a, b, c, d) {
+            let multiplFours
+            return multiplFours = a * b * c  * d            
+        }
+        function getAverage(a, b, c, d) {
+            let averageFours
+            return averageFours = (a + b + c + d) / 4            
+        }
+        function getMin(a, b, c, d) {
+            let minFours = a
+            if (a > b)
+                minFours = b 
+                else if (b > c)
+                    minFours = c
+                    else if (c > d)
+                        minFours = d              
+            return minFours 
+        }
+        const numberFirst = parseFloat(prompt('Enter the first number:'))
+        const numberSecond = parseFloat(prompt('Enter the second number:'))
+        const numberThird = parseFloat(prompt('Enter the third number:'))
+        const numberFourth = parseFloat(prompt('Enter the fourth number:'))
+        document.write(`sum ${getSum(numberFirst, numberSecond, numberThird, numberFourth)} <br>
+                        multiplication ${getMultiplication(numberFirst, numberSecond, numberThird, numberFourth)} <br>
+                        average  ${getAverage(numberFirst, numberSecond, numberThird, numberFourth)}  <br>
+                        minimum value ${getMin(numberFirst, numberSecond, numberThird, numberFourth)} <br>`)
+
     </script>
     
 </body>

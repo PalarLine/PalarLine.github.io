@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task 9</title>
 </head>
-
 <body>
     <h4>
         <a href="../index.html">Назад</a>
-    </h4>  
+    </h4> 
     <h1>Задача 9</h1>
-    <h3>Користувач загадує число. Комп’ютер задає питання поки не вгадає число користувача (використати confirm).
-    </h3>
+    <h4>Дано покази температур (довільна кількість). Розробити функцію, яка дозволить підрахувати кількість від’ємних показів температури.
+    </h4>
     <script>
-        alert('Ви загадуєте число. Комп`ютер намагається вгадати та задає питання')
-        //я вирішила задати інтервал щоб уникнути нескінченного циклу
-        const MIN = parseInt(prompt('Введіть початкове число інтервалу','')),
-              MAX = parseInt(prompt('Введіть число, що буде кінець інтервалу',''))
-        const userNumber = parseInt(prompt(`Загадайте ціле число від ${MIN} до ${MAX}`,''))
-        let result 
-               
-        do {
-            const computerNumber = Math.floor(Math.random() * (MAX - MIN + 1) + MIN)          
-            result = confirm(`Комп'ютер згенерував число: ${computerNumber}. Чи є воно вірним?`)
-            if (result) break                                                            
-        } while (!result)
-        
-        alert(`Комп вгадав. Було загадано число ${userNumber}`)
-    
-    </script>
-</body>
 
+        function isSubZero() {           
+            for (i = 0; i < arguments.length; i++)
+            return arguments[i] < 0            
+        }
+
+        let count = 0
+        let howManyTimes = parseInt(prompt('Введіть кількість записів:',''))
+        while (howManyTimes > 0) {
+            let enterTemperature = parseFloat(prompt('Введіть покази температури',''))
+            if (isSubZero(enterTemperature))
+                count++             
+                howManyTimes--
+        }
+
+        document.write(`Кількіість від'ємних показів температури складає: ${count}`)            
+        
+    </script>
+    
+</body>
 </html>
